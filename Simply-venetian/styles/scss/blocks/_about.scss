@@ -1,0 +1,88 @@
+@use '../colors';
+@use '../fonts';
+
+.about {
+  position: relative;
+
+  .about-container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: clamp(1.5rem, 1.04rem + 1.8727vw, 3.0625rem);
+    align-content: flex-end;
+
+    h2 {
+      font-size: clamp(1.5rem, 1.0584rem + 1.7978vw, 3rem);
+      font-weight: 500;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.015em;
+    }
+
+    .line {
+      position: absolute;
+      // top: 76px;
+      // top: 35px;
+      top: clamp(2.1875rem, 1.4331rem + 3.0712vw, 4.75rem);
+      left: 0;
+
+      width: 100vw;
+      height: 2px;
+
+      background: colors.$black;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      .text {
+        display: flex;
+        gap: 64px;
+        justify-content: center;
+      
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+      
+          p {
+            width: 100%;
+            max-width: 550px;
+      
+            font-size: clamp(0.875rem, 0.691rem + 0.7491vw, 1.5rem);
+            font-weight: 300;
+            line-height: 1.25;
+      
+            @media (width <= 768px) {
+              line-height: 1.23;
+            }
+          }
+      
+          @media (width <= 768px) {
+            gap: 16px;
+          }
+        }
+      
+        @media (width <= 576px) {
+          flex-flow: column;
+          gap: 16px;
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+      
+      .link {
+        width: fit-content;
+      
+        font-size: clamp(0.875rem, 0.691rem + 0.7491vw, 1.5rem);
+        font-weight: 700;
+        text-decoration-skip-ink: none;
+      
+        border-bottom: 2px solid colors.$black;
+      }
+    }
+
+    @media (width <= 1200px) {
+      align-content: center;
+    }
+  }}

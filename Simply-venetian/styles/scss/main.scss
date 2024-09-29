@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),  
+    url("../../fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),  
+    url("../../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: local("Kumbh Sans"),  
+    url("../../fonts/KumbhSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: local("Kumbh Sans"),  
+    url("../../fonts/KumbhSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: local("Kumbh Sans"),  
+    url("../../fonts/KumbhSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: local("Kumbh Sans"),  
+    url("../../fonts/KumbhSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@import './_normalize.scss';
+@import './_reset.scss';
+@import './_colors.scss';
+@import './_fonts.scss';
+@import './size';
+@import './blocks/header';
+@import './blocks/footer';
+@import './blocks/questions';
+@import './blocks/about';
+@import './blocks/gallery';
+@import './blocks/banner';
+@import './blocks/b2b';
+@import './blocks/designs';
+@import './blocks/designs';
+@import './blocks/contactUs';
+@import './blocks/marquee';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #fff;
+    color: #1c1c1c;
+}
+  
+.container {
+    width: 100%;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, -0.4427rem + 6.8914vw, 7rem);
+  }
+  
+  .main {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 1.4112rem + 2.397vw, 4rem);
+    padding: clamp(0.5rem, 0.0216rem + 1.9476vw, 2.125rem) 0 clamp(3.5625rem, 3.3233rem + 0.9738vw, 4.375rem);
+  }

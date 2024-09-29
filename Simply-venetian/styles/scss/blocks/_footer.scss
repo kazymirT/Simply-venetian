@@ -1,0 +1,142 @@
+@use '../fonts';
+@use '../colors';
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 0.3528rem + 0.5993vw, 1rem);
+
+  .footer-title {
+    font-family: fonts.$second-family;
+    font-size: clamp(0.875rem, 0.7646rem + 0.4494vw, 1.25rem);
+  }
+
+  .footer-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-link,
+  .footer-subtitle{
+    max-width: clamp(12.5rem, 10.9729rem + 6.2172vw, 17.6875rem);
+    font-size: clamp(0.875rem, 0.7646rem + 0.4494vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.32;
+
+    @media (width <= 576px) {
+      line-height: 1.2;
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  padding-bottom: 30px;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.8125rem, 1.8006rem + 4.1199vw, 6.25rem);
+
+    .footer-content {
+      display: flex;
+      flex-flow: row wrap;
+      gap: clamp(1.5rem, 0.0465rem + 5.9176vw, 6.4375rem);
+
+      .footer-contact {
+        @include flex;
+      }
+
+      .footer-location {
+        @include flex;
+      }
+
+      .footer-follow {
+        @include flex;
+        
+        li {
+          display: flex;
+
+          @media (width <= 576px) {
+            justify-content: end;
+          }
+        }
+
+        a {
+          border-bottom: 1px solid colors.$black;
+        }
+
+        @media (width <= 576px) {
+          align-items: end;
+          align-self: flex-end;
+          
+          .footer-follow_lists {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          } 
+        }
+      }
+
+      @media (width <= 992px) {
+        justify-content: space-evenly;
+      }
+
+      @media (width <= 576px) {
+        flex-flow: column;
+        justify-content: flex-start;
+      }
+    }
+
+    .footer-line {
+      position: absolute;
+      bottom: clamp(3.5625rem, 2.7897rem + 3.1461vw, 6.1875rem);
+      left: 0;
+
+      width: 100vw;
+      height: 2px;
+
+      background-color: colors.$black;
+    }
+
+    .footer-police {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+
+      .footer-police_text {
+        font-size: 1.25rem;
+        font-weight: 300;
+
+        @media (width <= 576px) {
+          display: none;
+        }
+      }
+
+      .footer-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        font-size: 0;
+
+        .footer-logo_title{
+          font-size: clamp(0.875rem, 0.7646rem + 0.4494vw, 1.25rem);
+          font-weight: 300;
+          line-height: 1.25;
+          color: colors.$black;
+        }
+
+      }
+    }
+  }
+}
