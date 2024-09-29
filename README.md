@@ -1,6 +1,6 @@
 # Simply-venetian
 
-**[Visit Simply Venetian](https://simply-venetian-2024.netlify.app/)**
+<a href="https://simply-venetian-2024.netlify.app/" target="_blank">Visit Simply Venetian</a>
 
 Description:
 Simply Venetian specializes in Venetian plaster, high-quality finishes, and textured walls. This project is a responsive landing page designed to represent the company's offerings.
