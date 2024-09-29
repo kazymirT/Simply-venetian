@@ -65,12 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener('DOMContentLoaded', function() {
-    const startServer = async () => {
-      await fetch('https://email-send-node.onrender.com/api/start-server', {
-        method: 'GET',
-      });
-    };
-    startServer();
+    
 
     const inputPhone = document.querySelector('.input-phone');
     const inputEmail = document.querySelector('.input-email');
@@ -98,25 +93,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const submitForm = async () => {
       try {
-      const body = {
-        fullName: inputName.value,
-        email: inputEmail.value,
-        phone: inputPhone.value,
-      }
       form.style.display = 'none'
       formLoading.style.display = 'flex'
-        await fetch('https://email-send-node.onrender.com/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify(body),
-        });
-        formSuccess.style.display = 'flex';
-        formLoading.style.display = 'none'; 
+       setTimeout(() => {
+         formLoading.style.display = 'none'; 
+         formError.style.display = 'flex';
+        }, 2000);
       } catch {
-        formError.style.display = 'flex';
+        formSuccess.style.display = 'flex';
         formLoading.style.display = 'none'; 
       } finally {
         inputEmail.value = '';
