@@ -97,10 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
       formLoading.style.display = 'flex'
        setTimeout(() => {
          formLoading.style.display = 'none'; 
-         formError.style.display = 'flex';
+         formSuccess.style.display = 'flex';
         }, 2000);
       } catch {
-        formSuccess.style.display = 'flex';
+        formError.style.display = 'flex';
         formLoading.style.display = 'none'; 
       } finally {
         inputEmail.value = '';
